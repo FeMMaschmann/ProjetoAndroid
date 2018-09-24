@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">ProjetoAndroid</string>
+
+
+    <string name="txtCadastro">Customer registration</string>
+
+    <string name="txtLogin">Clinic login</string>
+
+    <string name="txtNome">Name: </string>
+    <string name="hintNome">Type your name here</string>
+
+    <string name="txtEmail">E-mail: </string>
+    <string name="hintEmail">Type your e-mail here</string>
+
+    <string name="txtSenha">Password: </string>
+    <string name="hintSenha">Type your password here</string>
+
+    <string name="btnCadastrar">Register</string>
+    <string name="btnEntrar">Login</string>
+
+
 </resources>
