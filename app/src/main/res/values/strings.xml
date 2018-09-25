@@ -17,6 +17,7 @@
 
     <string name="btnCadastrar">Register</string>
     <string name="btnEntrar">Login</string>
+    <string name="title_activity_lista">ListaActivity</string>
 
 
 </resources>

@@ -17,6 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".CadastroActivity" />
+        <activity
+            android:name=".ListaActivity"
+            android:label="@string/title_activity_lista"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
