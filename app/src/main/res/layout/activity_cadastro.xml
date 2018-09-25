@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFAFA"
     tools:context="com.inf3m171.fernando.projetoandroid.CadastroActivity">
 
     <TextView
@@ -13,37 +14,37 @@
         android:text="@string/txtCadastro"
         android:textSize="20dp"
         android:layout_gravity="center"
+        style="@style/estiloTitulo"
         />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp">
+        android:layout_height="wrap_content">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtNome"
-        android:id="@+id/tvNome"
+        style="@style/estiloLabel"
         />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hintNome"
-            android:id="@+id/etNome"/>
+            android:id="@+id/etNome"
+            style="@style/estiloCampos"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp">
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtEmail"
-            android:id="@+id/tvEmail"
+            style="@style/estiloLabel"
             />
 
         <EditText
@@ -52,6 +53,7 @@
             android:hint="@string/hintEmail"
             android:id="@+id/etEmail"
             android:inputType="textEmailAddress"
+            style="@style/estiloCampos"
             />
 
     </LinearLayout>
@@ -59,13 +61,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp">
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtSenha"
-            android:id="@+id/tvSenha"
+            style="@style/estiloLabel"
             />
 
         <EditText
@@ -74,6 +75,28 @@
             android:hint="@string/hintSenha"
             android:id="@+id/etSenha"
             android:inputType="textPassword"
+            style="@style/estiloCampos"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtSenha"
+            style="@style/estiloLabel"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintSenha"
+            android:id="@+id/etConfirmaSenha"
+            android:inputType="textPassword"
+            style="@style/estiloCampos"
             />
 
     </LinearLayout>
@@ -89,6 +112,8 @@
             android:layout_height="wrap_content"
             android:text="@string/btnCadastrar"
             android:id="@+id/btnCadastrar"
+            style="@style/estiloButton"
+            android:layout_margin="10dp"
             />
 
     </LinearLayout>
