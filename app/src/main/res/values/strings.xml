@@ -14,6 +14,9 @@
 
     <string name="txtSenha">Password: </string>
     <string name="hintSenha">Type your password here</string>
+    <string name="txtConSenha">Confirm password: </string>
+    <string name="hintConSenha">Confirm your password here</string>
+
 
     <string name="btnCadastrar">Register</string>
     <string name="btnEntrar">Login</string>
