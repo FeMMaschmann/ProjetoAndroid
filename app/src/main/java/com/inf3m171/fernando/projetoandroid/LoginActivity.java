@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "E-mail deve ser preenchido!", Toast.LENGTH_LONG).show();
 
         if (senha.isEmpty())
-            Toast.makeText(LoginActivity.this, "E-mail deve ser preenchido!", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "Senha deve ser preenchido!", Toast.LENGTH_LONG).show();
 
         if (!email.isEmpty() && !senha.isEmpty()){
             autenticacao.signInWithEmailAndPassword(email, senha).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

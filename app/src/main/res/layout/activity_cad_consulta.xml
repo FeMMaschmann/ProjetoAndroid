@@ -1,78 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.inf3m171.fernando.projetoandroid.CadConsultaActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cadastro de consulta"
-        style="@style/estiloTitulo"
-        android:layout_gravity="center"
-        />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:orientation="vertical"
+        android:background="#FFFAFA">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txtNome"
-            android:layout_gravity="center_vertical"
-            style="@style/estiloLabel"
-            />
+            android:text="Cadastro de consulta"
+            style="@style/estiloTitulo"
+            android:layout_gravity="center"/>
 
-        <EditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtNome"
+                android:layout_gravity="center_vertical"
+                style="@style/estiloLabel" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintNome"
+                style="@style/estiloCampos"
+                android:id="@+id/etCadNome" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Idade: "
+                android:layout_gravity="center_vertical"
+                style="@style/estiloLabel" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="idade:"
+                style="@style/estiloCampos"
+                android:id="@+id/etCadIdade" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hintNome"
-            style="@style/estiloCampos"
-            android:id="@+id/etCadNome"
-            />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Problema: "
+                style="@style/estiloLabel"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descreva seu problema aqui"
+                android:lines="6"
+                style="@style/estiloCampos"
+                android:id="@+id/etProblema"/>
 
 
-    </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horario: "
+                style="@style/estiloLabel"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Problema: "
-            style="@style/estiloLabel"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/spHorario">
+            </Spinner>
+        </LinearLayout>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descreva seu problema aqui"
-            android:lines="6"
-            style="@style/estiloCampos"
-            android:id="@+id/etProblema"
-            />
+            android:gravity="center_horizontal">
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar"
+                style="@style/estiloButton"
+                android:layout_gravity="center"
+                android:id="@+id/btnVoltarCad"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marcar"
+                style="@style/estiloButton"
+                android:id="@+id/btnMarcarCad"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spHorario">
-
-        </Spinner>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>
