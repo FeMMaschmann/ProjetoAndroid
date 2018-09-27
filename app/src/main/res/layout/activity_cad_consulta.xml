@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cadastro de consulta"
+            android:text="@string/txtCadConsulta"
             style="@style/estiloTitulo"
             android:layout_gravity="center"/>
 
@@ -45,14 +45,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Idade: "
+                android:text="@string/txtIdade"
                 android:layout_gravity="center_vertical"
                 style="@style/estiloLabel" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="idade:"
+                android:hint="@string/hintIdade"
                 style="@style/estiloCampos"
                 android:id="@+id/etCadIdade" />
         </LinearLayout>
@@ -65,13 +65,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Problema: "
-                style="@style/estiloLabel"/>
+                android:text="@string/txtProblema"
+                style="@style/estiloLabel"
+                android:id="@+id/tvProblema"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descreva seu problema aqui"
+                android:hint="@string/hintProblema"
                 android:lines="6"
                 style="@style/estiloCampos"
                 android:id="@+id/etProblema"/>
@@ -85,7 +86,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Horario: "
+                android:text="@string/txtHorario"
                 style="@style/estiloLabel"/>
 
             <Spinner
@@ -104,7 +105,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Voltar"
+                android:text="@string/btnVoltar"
                 style="@style/estiloButton"
                 android:layout_gravity="center"
                 android:id="@+id/btnVoltarCad"/>
@@ -112,7 +113,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Marcar"
+                android:text="@string/btnCadastrar"
                 style="@style/estiloButton"
                 android:id="@+id/btnMarcarCad"/>
 

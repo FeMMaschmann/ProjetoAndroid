@@ -3,11 +3,20 @@
 
 
     <string name="txtCadastro">Customer registration</string>
+    <string name="txtCadConsulta">Query registration</string>
 
     <string name="txtLogin">Clinic login</string>
 
     <string name="txtNome">Name: </string>
     <string name="hintNome">Type your name here</string>
+
+    <string name="txtIdade">Age: </string>
+    <string name="hintIdade">Type your age</string>
+
+    <string name="txtProblema">Problem: </string>
+    <string name="hintProblema">Describe you problem here</string>
+    
+    <string name="txtHorario">Schedule</string>
 
     <string name="txtEmail">E-mail: </string>
     <string name="hintEmail">Type your e-mail here</string>
@@ -20,6 +29,7 @@
 
     <string name="btnCadastrar">Register</string>
     <string name="btnEntrar">Login</string>
+    <string name="btnVoltar">Back</string>
     <string name="title_activity_lista">ListaActivity</string>
 
 

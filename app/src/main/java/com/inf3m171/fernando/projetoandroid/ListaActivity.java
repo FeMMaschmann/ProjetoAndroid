@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -57,6 +59,25 @@ public class ListaActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+        lvLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                AlertDialog.Builder alerta = new AlertDialog.Builder(ListaActivity.this);
+                alerta.setTitle("Informação do paciente");
+                alerta.setIcon(android.R.drawable.ic_menu_edit);
+                alerta.setMessage("Confira as informações do(a) paciente: " + listaDePacientes.get(i));
+
+
+                alerta.show();
+            }
+        });
+
+
+
+
     }
 
     @Override
@@ -76,6 +97,8 @@ public class ListaActivity extends AppCompatActivity {
                 paciente.setIdade(dataSnapshot.child("idade").getValue(Integer.class));
                 paciente.setProblema(dataSnapshot.child("problema").getValue(String.class));
                 paciente.setHorario(dataSnapshot.child("horario").getValue(String.class));
+                listaDePacientes.add(paciente);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
