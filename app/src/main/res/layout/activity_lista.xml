@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFAFA"
     tools:context="com.inf3m171.fernando.projetoandroid.ListaActivity">
 
     <android.support.design.widget.AppBarLayout

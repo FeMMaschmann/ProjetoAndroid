@@ -54,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hintIdade"
                 style="@style/estiloCampos"
-                android:id="@+id/etCadIdade" />
+                android:id="@+id/etCadIdade"
+                android:inputType="number"/>
         </LinearLayout>
 
         <LinearLayout
