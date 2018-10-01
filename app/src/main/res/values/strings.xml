@@ -2,7 +2,7 @@
     <string name="app_name">ProjetoAndroid</string>
 
 
-    <string name="txtCadastro">Customer registration</string>
+    <string name="txtCadastro">Pacient registration</string>
     <string name="txtCadConsulta">Query registration</string>
 
     <string name="txtLogin">Clinic login</string>
@@ -25,6 +25,15 @@
     <string name="hintSenha">Type your password here</string>
     <string name="txtConSenha">Confirm password: </string>
     <string name="hintConSenha">Confirm your password here</string>
+
+    <string name="txtAviso">All fields must be completed</string>
+
+    <string name="txtConsultaOk">Your appointment was successfully marked</string>
+
+    <string name="cadErro">User not crated</string>
+    <string name="cadAviso">The e-mail field must be completed and the password must be equals</string>
+
+    <string name="txtSair">Exit</string>
 
 
     <string name="btnCadastrar">Register</string>

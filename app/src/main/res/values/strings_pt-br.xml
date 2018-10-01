@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">ProjetoAndroid</string>
+
+
+    <string name="txtCadastro">Cadastro de paciente</string>
+    <string name="txtCadConsulta">Cadastro de consulta</string>
+
+    <string name="txtLogin">Clinica login</string>
+
+    <string name="txtNome">Nome: </string>
+    <string name="hintNome">Digite seu nome aqui</string>
+
+    <string name="txtIdade">Idade: </string>
+    <string name="hintIdade">Digite sua idade aqui</string>
+
+    <string name="txtProblema">Problema: </string>
+    <string name="hintProblema">Descreva seu problema aqui</string>
+    
+    <string name="txtHorario">Horarios</string>
+
+    <string name="txtEmail">E-mail: </string>
+    <string name="hintEmail">Digite seu e-mail aqui</string>
+
+    <string name="txtSenha">Senha: </string>
+    <string name="hintSenha">Digite sua senha aqui</string>
+    <string name="txtConSenha">Confirmar senha: </string>
+    <string name="hintConSenha">Confirme sua senha aqui</string>
+
+    <string name="txtAviso">Todos os campos devem ser preenchidos</string>
+
+    <string name="txtConsultaOk">Sua consulta foi marcada com sucesso</string>
+
+    <string name="cadErro">Usuario não criado com sucesso</string>
+    <string name="cadAviso">O campo de e-mail deve ser preenchido e as senhas deve ser iguais</string>
+
+    <string name="txtSair">Sair</string>
+
+
+    <string name="btnCadastrar">Registrar</string>
+    <string name="btnEntrar">Login</string>
+    <string name="btnVoltar">Voltar</string>
+    <string name="title_activity_lista">ListaActivity</string>
+
+
+</resources>
