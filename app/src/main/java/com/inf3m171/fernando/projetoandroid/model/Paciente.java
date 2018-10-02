@@ -5,12 +5,13 @@ package com.inf3m171.fernando.projetoandroid.model;
  */
 
 public class Paciente {
-    private String id, nome, problema, horario;
+    private String id, nome, problema;
     private int idade;
+    private Horario horario;
 
     @Override
     public String toString() {
-        return nome + " - " + idade + " anos";
+        return nome;
     }
 
     public String getId() {
@@ -37,19 +38,19 @@ public class Paciente {
         this.idade = idade;
     }
 
-    public String getHorario() {
-        return horario;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
-
     public String getProblema() {
         return problema;
     }
 
     public void setProblema(String problema) {
         this.problema = problema;
+    }
+
+    public Horario getHorario() {
+        return horario;
+    }
+
+    public void setHorario(Horario horario) {
+        this.horario = horario;
     }
 }

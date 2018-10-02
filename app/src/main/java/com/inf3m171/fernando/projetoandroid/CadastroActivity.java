@@ -64,17 +64,17 @@ public class CadastroActivity extends AppCompatActivity {
                         reference.child("email").setValue(email);
                         reference.child("senha").setValue(senha);
                     }else {
-                        erro = "Não foi possivel criar o usuário!";
+                        erro = getResources().getString(R.string.cadErro);
                     }
                 }
             });
         }else {
-            erro = "O campo e-mail deve ser preenchido e os campos de senha devem ser iguais";
+            erro = getResources().getString(R.string.cadAviso);
         }
 
         if (!erro.isEmpty()){
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-            alerta.setTitle("Atenção");
+            alerta.setTitle(getResources().getString(R.string.cadAtencao));
             alerta.setMessage(erro);
             alerta.setNeutralButton("OK", null);
             alerta.show();

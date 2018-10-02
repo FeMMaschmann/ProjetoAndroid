@@ -30,8 +30,9 @@
 
     <string name="txtConsultaOk">Your appointment was successfully marked</string>
 
-    <string name="cadErro">User not crated</string>
+    <string name="cadErro">User not created</string>
     <string name="cadAviso">The e-mail field must be completed and the password must be equals</string>
+    <string name="cadAtencao">Atention!</string>
 
     <string name="txtSair">Exit</string>
 
@@ -40,6 +41,5 @@
     <string name="btnEntrar">Login</string>
     <string name="btnVoltar">Back</string>
     <string name="title_activity_lista">ListaActivity</string>
-
 
 </resources>

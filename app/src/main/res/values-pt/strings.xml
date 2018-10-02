@@ -15,7 +15,7 @@
 
     <string name="txtProblema">Problema: </string>
     <string name="hintProblema">Descreva seu problema aqui</string>
-    
+
     <string name="txtHorario">Horarios</string>
 
     <string name="txtEmail">E-mail: </string>
@@ -32,6 +32,7 @@
 
     <string name="cadErro">Usuario não criado com sucesso</string>
     <string name="cadAviso">O campo de e-mail deve ser preenchido e as senhas deve ser iguais</string>
+    <string name="cadAtencao">Atenção!</string>
 
     <string name="txtSair">Sair</string>
 
@@ -40,6 +41,5 @@
     <string name="btnEntrar">Login</string>
     <string name="btnVoltar">Voltar</string>
     <string name="title_activity_lista">ListaActivity</string>
-
 
 </resources>

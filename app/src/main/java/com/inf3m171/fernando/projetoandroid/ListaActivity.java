@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.inf3m171.fernando.projetoandroid.model.Horario;
 import com.inf3m171.fernando.projetoandroid.model.Paciente;
 
 import java.util.ArrayList;
@@ -56,6 +57,7 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ListaActivity.this, CadConsultaActivity.class);
+                i.putExtra("acao", "inserir");
                 startActivity(i);
             }
         });
@@ -64,14 +66,19 @@ public class ListaActivity extends AppCompatActivity {
         lvLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                AlertDialog.Builder alerta = new AlertDialog.Builder(ListaActivity.this);
-                alerta.setTitle("Informação do paciente");
-                alerta.setIcon(android.R.drawable.ic_menu_edit);
-                alerta.setMessage("Confira as informações do(a) paciente: " + listaDePacientes.get(i));
+                Paciente paciente = listaDePacientes.get(i);
 
 
-                alerta.show();
+
+                Intent intent = new Intent(ListaActivity.this, CadConsultaActivity.class);
+
+                intent.putExtra("acao", "editar");
+                intent.putExtra("idPaciente", paciente.getId());
+                intent.putExtra("nomePaciente", paciente.getNome());
+                intent.putExtra("idadePaciente", paciente.getIdade());
+                intent.putExtra("problemaPaciente", paciente.getProblema());
+                intent.putExtra("horarioPacientqe", paciente.getHorario().getId());
+                startActivity(intent);
             }
         });
     }
@@ -92,7 +99,7 @@ public class ListaActivity extends AppCompatActivity {
                 paciente.setNome(dataSnapshot.child("nome").getValue(String.class));
                 paciente.setIdade(dataSnapshot.child("idade").getValue(Integer.class));
                 paciente.setProblema(dataSnapshot.child("problema").getValue(String.class));
-                paciente.setHorario(dataSnapshot.child("horario").getValue(String.class));
+                paciente.setHorario(dataSnapshot.child("horario").getValue(Horario.class));
                 listaDePacientes.add(paciente);
                 adapter.notifyDataSetChanged();
             }
@@ -131,7 +138,7 @@ public class ListaActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        menu.add("Sair");
+        menu.add(getResources().getString(R.string.txtSair));
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -139,9 +146,10 @@ public class ListaActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.toString().equals("Sair")){
+        if (item.toString().equals(getResources().getString(R.string.txtSair))){
             FirebaseAuth.getInstance().signOut();
-            finish();
+            Intent i = new Intent(ListaActivity.this, LoginActivity.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);
