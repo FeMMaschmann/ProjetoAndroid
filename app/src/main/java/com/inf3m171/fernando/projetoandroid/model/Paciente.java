@@ -7,7 +7,7 @@ package com.inf3m171.fernando.projetoandroid.model;
 public class Paciente {
     private String id, nome, problema;
     private int idade;
-    private Horario horario;
+    private String horario;
 
     @Override
     public String toString() {
@@ -46,11 +46,11 @@ public class Paciente {
         this.problema = problema;
     }
 
-    public Horario getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(Horario horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 }

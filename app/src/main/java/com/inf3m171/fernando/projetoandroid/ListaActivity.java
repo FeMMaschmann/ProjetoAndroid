@@ -3,8 +3,6 @@ package com.inf3m171.fernando.projetoandroid;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -21,7 +19,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.inf3m171.fernando.projetoandroid.model.Horario;
 import com.inf3m171.fernando.projetoandroid.model.Paciente;
 
 import java.util.ArrayList;
