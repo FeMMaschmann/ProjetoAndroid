@@ -34,6 +34,12 @@
     <string name="cadAviso">O campo de e-mail deve ser preenchido e as senhas deve ser iguais</string>
     <string name="cadAtencao">Atenção!</string>
 
+
+    <string name="usuarioErro">Usuario deve estar preenchido!</string>
+    <string name="senhaErro">Senha deve estar preenchida!</string>
+
+    <string name="loginErro">Login falhou, usuario ou senha incorretas!</string>
+
     <string name="txtSair">Sair</string>
 
 

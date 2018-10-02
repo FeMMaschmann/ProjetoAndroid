@@ -6,7 +6,7 @@ package com.inf3m171.fernando.projetoandroid.model;
 
 public class Paciente {
     private String id, nome, problema;
-    private int idade;
+    private String idade;
     private String horario;
 
     @Override
@@ -30,11 +30,11 @@ public class Paciente {
         this.nome = nome;
     }
 
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 

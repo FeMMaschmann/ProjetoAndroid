@@ -74,7 +74,7 @@ public class ListaActivity extends AppCompatActivity {
                 intent.putExtra("nomePaciente", paciente.getNome());
                 intent.putExtra("idadePaciente", paciente.getIdade());
                 intent.putExtra("problemaPaciente", paciente.getProblema());
-                intent.putExtra("horarioPacientqe", paciente.getHorario().getId());
+                intent.putExtra("horarioPaciente", paciente.getHorario());
                 startActivity(intent);
             }
         });
@@ -94,9 +94,9 @@ public class ListaActivity extends AppCompatActivity {
                 Paciente paciente = new Paciente();
                 paciente.setId(dataSnapshot.getKey());
                 paciente.setNome(dataSnapshot.child("nome").getValue(String.class));
-                paciente.setIdade(dataSnapshot.child("idade").getValue(Integer.class));
+                paciente.setIdade(dataSnapshot.child("idade").getValue(String.class));
                 paciente.setProblema(dataSnapshot.child("problema").getValue(String.class));
-                paciente.setHorario(dataSnapshot.child("horario").getValue(Horario.class));
+                paciente.setHorario(dataSnapshot.child("horario").getValue(String.class));
                 listaDePacientes.add(paciente);
                 adapter.notifyDataSetChanged();
             }

@@ -31,8 +31,13 @@
     <string name="txtConsultaOk">Your appointment was successfully marked</string>
 
     <string name="cadErro">User not created</string>
-    <string name="cadAviso">The e-mail field must be completed and the password must be equals</string>
+    <string name="cadAviso">The e-mail field must be filled and the password must be equals</string>
     <string name="cadAtencao">Atention!</string>
+
+    <string name="usuarioErro">User must be filled!</string>
+    <string name="senhaErro">Password must be filled!</string>
+
+    <string name="loginErro">Login failed, user or password incorrect!</string>
 
     <string name="txtSair">Exit</string>
 

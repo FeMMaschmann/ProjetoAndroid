@@ -81,17 +81,17 @@ public class LoginActivity extends AppCompatActivity {
         String senha = etSenhaEntrar.getText().toString();
 
         if (email.isEmpty())
-            Toast.makeText(LoginActivity.this, "E-mail deve ser preenchido!", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, R.string.usuarioErro, Toast.LENGTH_LONG).show();
 
         if (senha.isEmpty())
-            Toast.makeText(LoginActivity.this, "Senha deve ser preenchido!", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, R.string.senhaErro, Toast.LENGTH_LONG).show();
 
         if (!email.isEmpty() && !senha.isEmpty()){
             autenticacao.signInWithEmailAndPassword(email, senha).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful())
-                        Toast.makeText(LoginActivity.this, "Usuario ou senha inválidos!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, R.string.loginErro, Toast.LENGTH_LONG).show();
                 }
             });
         }

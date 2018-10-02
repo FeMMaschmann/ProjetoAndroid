@@ -27,14 +27,13 @@ public class CadConsultaActivity extends AppCompatActivity {
     private Spinner spHorario;
     private Button btnVoltarCad, btnMarcarCad;
 
-    private List<Horario> listaDeHorario;
+
+
 
     private FirebaseDatabase database;
     private DatabaseReference reference;
 
     private ArrayAdapter adapter;
-    private Query queryRef;
-    private ChildEventListener childEventListener;
 
     private Paciente paciente;
     private String acao;
@@ -55,7 +54,6 @@ public class CadConsultaActivity extends AppCompatActivity {
         btnVoltarCad = (Button) findViewById(R.id.btnVoltarCad);
         btnMarcarCad = (Button) findViewById(R.id.btnMarcarCad);
 
-        listaDeHorario = new ArrayList<>();
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, horarios);
         spHorario.setAdapter(adapter);
 
@@ -83,12 +81,12 @@ public class CadConsultaActivity extends AppCompatActivity {
             paciente = new Paciente();
             paciente.setId(getIntent().getExtras().getString("idPaciente"));
             paciente.setNome(getIntent().getExtras().getString("nomePaciente"));
-            paciente.setIdade(getIntent().getExtras().getInt("idadePaciente"));
+            paciente.setIdade(getIntent().getExtras().getString("idadePaciente"));
             paciente.setProblema(getIntent().getExtras().getString("problemaPaciente"));
             //paciente.setHorario(getIntent().getExtras().getInt("horarioPaciente"));
 
             String nomePaciente = getIntent().getExtras().getString("nomePaciente");
-            int idadePaciente = getIntent().getExtras().getInt("idadePaciente");
+            String idadePaciente = getIntent().getExtras().getString("idadePaciente");
             String problemaPaciente = getIntent().getExtras().getString("problemaPaciente");
             String horarioPaciente = getIntent().getExtras().getString("horarioPaciente");
             etCadNome.setText(nomePaciente);
@@ -97,65 +95,6 @@ public class CadConsultaActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        queryRef = reference.child("horarios").orderByKey();
-
-        listaDeHorario.clear();
-
-        childEventListener = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Horario hora = new Horario();
-                hora.setId(dataSnapshot.getKey());
-                hora.setHorario(dataSnapshot.child("horarios").getValue(String.class));
-                listaDeHorario.add(hora);
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-
-        queryRef.addChildEventListener(childEventListener);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-        queryRef.removeEventListener(childEventListener);
-    }
-
-    private void informacaoPaciente(){
-        String nomePaciente = getIntent().getExtras().getString("nomePaciente");
-        int idadePaciente = getIntent().getExtras().getInt("idadePaciente");
-        String problemaPaciente = getIntent().getExtras().getString("problemaPaciente");
-        //String horarioPaciente = getIntent().getExtras().getString("horarioPaciente");
-        etCadNome.setText(nomePaciente);
-        etCadIdade.setText(idadePaciente);
-        etProblema.setText(problemaPaciente);
-        //spHorario.set(horarioPaciente);
-    }
 
     private void cadastrar(){
         String nome = etCadNome.getText().toString();
@@ -167,19 +106,23 @@ public class CadConsultaActivity extends AppCompatActivity {
             Toast.makeText(this, getResources().getString(R.string.txtAviso), Toast.LENGTH_SHORT).show();
         }else{
 
-            Horario hora = new Horario();
-            hora.getHorario();
-            hora.getId();
-
             if (acao.equals("inserir")) {
                 paciente = new Paciente();
+            }else {
+                paciente.setId(getIntent().getExtras().getString("idPaciente"));
             }
             paciente.setNome(nome);
-            paciente.setIdade(Integer.valueOf(idade));
+            paciente.setIdade(idade);
             paciente.setProblema(problema);
-            paciente.setHorario(hora);
+            paciente.setHorario(horario);
 
-            reference.child("pacientes").push().setValue(paciente);
+            if (acao.equals("inserir"))
+                reference.child("pacientes").push().setValue(paciente);
+//            }else if (acao.equals("editar")) {
+//                reference.child("pacientes").getParent().child(paciente.getId()).getParent().setValue("paciente");
+//            }
+
+
 
             Toast.makeText(this, getResources().getString(R.string.txtConsultaOk), Toast.LENGTH_LONG).show();
 
