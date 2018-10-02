@@ -19,6 +19,7 @@ import com.google.firebase.database.Query;
 import com.inf3m171.fernando.projetoandroid.model.Paciente;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class CadConsultaActivity extends AppCompatActivity {
@@ -26,9 +27,6 @@ public class CadConsultaActivity extends AppCompatActivity {
     private EditText etCadNome, etCadIdade, etProblema;
     private Spinner spHorario;
     private Button btnVoltarCad, btnMarcarCad;
-
-
-
 
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -116,11 +114,25 @@ public class CadConsultaActivity extends AppCompatActivity {
             paciente.setProblema(problema);
             paciente.setHorario(horario);
 
-            if (acao.equals("inserir"))
+            if (acao.equals("inserir")){
                 reference.child("pacientes").push().setValue(paciente);
-//            }else if (acao.equals("editar")) {
-//                reference.child("pacientes").getParent().child(paciente.getId()).getParent().setValue("paciente");
-//            }
+            }else {
+                HashMap<String, Object> nomeUp = new HashMap<>();
+                nomeUp.put("nome", paciente.getNome());
+                FirebaseDatabase.getInstance().getReference().child("pacientes").child(paciente.getId()).updateChildren(nomeUp);
+
+                HashMap<String, Object> idadeUp = new HashMap<>();
+                idadeUp.put("idade", paciente.getIdade());
+                FirebaseDatabase.getInstance().getReference().child("pacientes").child(paciente.getId()).updateChildren(idadeUp);
+
+                HashMap<String, Object> problemaUp = new HashMap<>();
+                problemaUp.put("problema", paciente.getProblema());
+                FirebaseDatabase.getInstance().getReference().child("pacientes").child(paciente.getId()).updateChildren(problemaUp);
+
+                HashMap<String, Object> horarioUp = new HashMap<>();
+                horarioUp.put("horario", paciente.getHorario());
+                FirebaseDatabase.getInstance().getReference().child("pacientes").child(paciente.getId()).updateChildren(horarioUp);
+            }
 
 
 
