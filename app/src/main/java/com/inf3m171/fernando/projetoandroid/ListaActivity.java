@@ -1,8 +1,10 @@
 package com.inf3m171.fernando.projetoandroid;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -33,6 +35,7 @@ public class ListaActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private Query queryRef;
     private ChildEventListener childEventListener;
+    private Paciente paciente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +81,41 @@ public class ListaActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        lvLista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int position, long l) {
+
+
+
+                AlertDialog.Builder alerta = new AlertDialog.Builder(ListaActivity.this);
+                alerta.setTitle("Atention!");
+                alerta.setIcon(android.R.drawable.ic_dialog_alert);
+                alerta.setMessage("Do you want to delete the pacient  "
+                        + listaDePacientes.get(position) + "?");
+                alerta.setNeutralButton("Cancel", null);
+                alerta.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        reference.child("pacientes").removeValue();
+                        listaDePacientes.remove(position);
+                        adapter.notifyDataSetChanged();
+
+                    }
+                });
+                alerta.show();
+
+                return true;
+            }
+        });
+
     }
+
+
+
+
+
 
     @Override
     protected void onStart() {
