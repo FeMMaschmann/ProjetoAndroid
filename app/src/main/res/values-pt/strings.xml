@@ -48,4 +48,11 @@
     <string name="btnVoltar">Voltar</string>
     <string name="title_activity_lista">ListaActivity</string>
 
+    <string name="selecione">Selecione...</string>
+
+    <string name="delAlerta">Deseja mesmo dele o(a) paciente </string>
+
+    <string name="calcela">Cancelar</string>
+    <string name="sim">Sim</string>
+
 </resources>

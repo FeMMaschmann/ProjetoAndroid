@@ -68,8 +68,6 @@ public class ListaActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Paciente paciente = listaDePacientes.get(i);
 
-
-
                 Intent intent = new Intent(ListaActivity.this, CadConsultaActivity.class);
 
                 intent.putExtra("acao", "editar");
@@ -90,12 +88,12 @@ public class ListaActivity extends AppCompatActivity {
 
 
                 AlertDialog.Builder alerta = new AlertDialog.Builder(ListaActivity.this);
-                alerta.setTitle("Atention!");
+                alerta.setTitle(getResources().getString(R.string.cadAtencao));
                 alerta.setIcon(android.R.drawable.ic_dialog_alert);
-                alerta.setMessage("Do you want to delete the pacient  "
+                alerta.setMessage(getString(R.string.delAlerta)
                         + listaDePacientes.get(position) + "?");
-                alerta.setNeutralButton("Cancel", null);
-                alerta.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                alerta.setNeutralButton(getString(R.string.calcela), null);
+                alerta.setPositiveButton(getString(R.string.sim), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         reference.child("pacientes").removeValue();

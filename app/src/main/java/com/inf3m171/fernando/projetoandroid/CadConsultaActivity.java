@@ -3,24 +3,20 @@ package com.inf3m171.fernando.projetoandroid;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.inf3m171.fernando.projetoandroid.model.Paciente;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class CadConsultaActivity extends AppCompatActivity {
 
@@ -36,7 +32,7 @@ public class CadConsultaActivity extends AppCompatActivity {
     private Paciente paciente;
     private String acao;
 
-    private String[] horarios ={"Select", "9:00", "9:50", "10:40", "11:20", "12:00", "14:30", "15:20", "16:10", "17:00"};
+    private String[] horarios ={getResources().getString(R.string.selecione), "9:00", "9:50", "10:40", "11:20", "12:00", "14:30", "15:20", "16:10", "17:00"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +77,7 @@ public class CadConsultaActivity extends AppCompatActivity {
             paciente.setNome(getIntent().getExtras().getString("nomePaciente"));
             paciente.setIdade(getIntent().getExtras().getString("idadePaciente"));
             paciente.setProblema(getIntent().getExtras().getString("problemaPaciente"));
-            //paciente.setHorario(getIntent().getExtras().getInt("horarioPaciente"));
+            paciente.setHorario(getIntent().getExtras().getString("horarioPaciente"));
 
             String nomePaciente = getIntent().getExtras().getString("nomePaciente");
             String idadePaciente = getIntent().getExtras().getString("idadePaciente");
@@ -90,6 +86,14 @@ public class CadConsultaActivity extends AppCompatActivity {
             etCadNome.setText(nomePaciente);
             etCadIdade.setText(idadePaciente);
             etProblema.setText(problemaPaciente);
+
+            for (int i = 1; i < horarios.length; i++){
+                if (horarios[i].equals(horarioPaciente)){
+                    spHorario.setSelection(i);
+                    break;
+                }
+            }
+
         }
     }
 

@@ -15,21 +15,41 @@
         android:text="@string/txtLogin"
         style="@style/estiloTitulo"/>
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txtEmail"
-        android:inputType="textEmailAddress"
-        style="@style/estiloCampos"
-        android:id="@+id/etEmailEntrar"/>
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtEmail"
+            style="@style/estiloLabel"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintEmail"
+            android:inputType="textEmailAddress"
+            style="@style/estiloCampos"
+            android:id="@+id/etEmailEntrar"/>
+    </LinearLayout>
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txtSenha"
-        android:inputType="textPassword"
-        style="@style/estiloCampos"
-        android:id="@+id/etSenhaEntrar"/>
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtSenha"
+            style="@style/estiloLabel"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintSenha"
+            android:inputType="textPassword"
+            style="@style/estiloCampos"
+            android:id="@+id/etSenhaEntrar"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

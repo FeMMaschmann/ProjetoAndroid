@@ -47,4 +47,11 @@
     <string name="btnVoltar">Back</string>
     <string name="title_activity_lista">ListaActivity</string>
 
+    <string name="selecione">Select...</string>
+    
+    <string name="delAlerta">Do you want to delete the pacient </string>
+
+    <string name="Calcela">cancel</string>
+    <string name="Sim">yes</string>
+
 </resources>
